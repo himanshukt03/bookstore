@@ -5,7 +5,7 @@ import Books from './pages/Books';
 import BookDetailsModal from './components/BookDetailsModal';
 import BookCard from './components/BookCard'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css'; // Import the custom CSS file
+import './index.css'; 
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState(null);
