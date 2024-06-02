@@ -1,40 +1,73 @@
-/* BookDetailsModal.css */
-
 .modal-content {
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .modal-header {
-    border-bottom: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .modal-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .modal-footer {
-    border-top: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
-  .close {
-    padding: 0;
-    background: none;
-    border: none;
-  }
-  
-  @media (max-width: 768px) {
-    .modal-dialog {
-      width: 90%;
-      margin: auto;
-    }
-  }
-  
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  position: relative;
+  padding: 20px; /* Added padding for close button margin */
+}
+
+.img-fluid {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.modal-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.book-details {
+  width: 90%; /* Increased width of text area */
+}
+
+.book-details p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1050;
+  color: #333;
+}
+
+.btn-close:focus {
+  outline: none;
+}
+
+.modal-footer {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.add-to-cart {
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 10px 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+}
+
+.add-to-cart i {
+  margin-right: 8px;
+}
+
+.add-to-cart:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}

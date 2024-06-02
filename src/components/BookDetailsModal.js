@@ -1,36 +1,40 @@
 import React from 'react';
-import './BookDetailsModal.css'; 
+import './BookDetailsModal.css';
 
 const BookDetailsModal = ({ show, onClose, book }) => {
   if (!book) return null;
 
   return (
-    <div className={`modal fade ${show ? 'show d-block' : 'd-none'}`} tabIndex="-1" role="dialog" style={{ overflow: 'auto' }}>
+    <div className={`modal fade ${show ? 'show d-block' : 'd-none'}`} tabIndex="-1" role="dialog">
       <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div className="modal-content">
+          <button type="button" className="btn-close" aria-label="Close" onClick={onClose}>
+            &times;
+          </button>
           <div className="row no-gutters">
-            <div className="col-md-6" style={{ padding: '20px' }}>
+            <div className="col-md-6">
               <img
                 src={book.image}
                 alt="Book Cover"
-                style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '4px' }}
+                className="img-fluid"
               />
             </div>
-            <div className="col-md-6" style={{ padding: '20px' }}>
-              <div className="modal-header">
-                <h5 className="modal-title">{book.title}</h5>
-                <button type="button" className="close" aria-label="Close" onClick={onClose}>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
+            <div className="col-md-6 p-4 d-flex flex-column">
+              <div className="book-details">
+                <h3 className="modal-title">{book.title}</h3>
                 <p><strong>Author:</strong> {book.author}</p>
                 <p><strong>Price:</strong> {book.price}</p>
                 <p>{book.description}</p>
               </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={onClose}>Close</button>
-                <button type="button" className="btn btn-primary">Add to Cart</button>
+              <div className="modal-footer mt-auto">
+                <button
+                  type="button"
+                  className="btn btn-primary add-to-cart"
+                  onClick={onClose}
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
