@@ -4,7 +4,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: relative;
-  padding: 20px; /* Added padding for close button margin */
+  padding: 20px; 
 }
 
 .img-fluid {
@@ -20,7 +20,7 @@
 }
 
 .book-details {
-  width: 90%; /* Increased width of text area */
+  width: 90%; 
 }
 
 .book-details p {
