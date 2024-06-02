@@ -12,4 +12,23 @@ code {
     monospace;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.brand-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
 

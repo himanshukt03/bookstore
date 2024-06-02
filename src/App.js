@@ -5,7 +5,7 @@ import Books from './pages/Books';
 import BookDetailsModal from './components/BookDetailsModal';
 import BookCard from './components/BookCard'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './index.css'; // Import the custom CSS file
 
 const App = () => {
   const [selectedBook, setSelectedBook] = useState(null);
@@ -19,8 +19,6 @@ const App = () => {
     { image: 'https://mediacdn.nhbs.com/jackets/jackets_resizer_large/15/156202.jpg', title: 'The Selfish Gene', author: 'Richard Dawkins', price: '₹699', description: 'Explore the concept of gene-centered evolution and its implications for understanding the behavior of organisms, including humans. Richard Dawkins presents a compelling argument for the role of genes in evolution, challenging conventional views and providing a fresh perspective on the driving forces behind natural selection and survival.' },
     { image: 'https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg', title: 'Sapiens: A Brief History of Humankind', author: 'Yuval Noah Harari', price: '₹749', description: 'A captivating journey through the history of Homo sapiens, from the emergence of our species to the present day. Yuval Noah Harari examines the pivotal moments that shaped human history, exploring the cognitive revolution, agricultural advancements, and the complex societal structures that define our modern world.' },
   ];
-  
-  
 
   const handleShowModal = (book) => {
     setSelectedBook(book);
@@ -36,7 +34,10 @@ const App = () => {
     <Router>
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="navbar-brand" to="/">BookStore</Link>
+          <Link className="navbar-brand" to="/">
+            <img src="book-stack.png" alt="Logo" className="logo" />
+            <span className="brand-title">Scribe</span>
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -48,7 +49,12 @@ const App = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/books">Books</Link>
               </li>
-              {/* Add other navbar links here */}
+              <li className="nav-item">
+                <a className="nav-link" href="#">Featured</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Cart</a>
+              </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
@@ -60,7 +66,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Books />} />
         </Routes>
-        {/* Render multiple BookCard components */}
         <div className="container mt-5">
           <div className="row">
             {books.map((book, index) => (
